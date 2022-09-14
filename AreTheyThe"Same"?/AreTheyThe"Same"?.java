@@ -1,3 +1,4 @@
+//Solution 1
 import java.util.List;
 import java.util.ArrayList;
 public class AreSame {
@@ -20,6 +21,21 @@ public class AreSame {
     }
 }
 
+
+//Solution 2
+
+import java.util.*;
+public class AreSame {
+  
+  public static boolean comp(int[] a, int[] b) {
+    if (a == null || b == null || a.length != b.length) {
+     return false;
+    }
+   int[] first = Arrays.stream(a).map(e -> e * e).sorted().toArray();
+   int[] second = Arrays.stream(b).sorted().toArray();
+   return Arrays.equals(first, second);
+   }
+}
 
 
 // DESCRIPTION:
